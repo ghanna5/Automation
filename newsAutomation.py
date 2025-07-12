@@ -1,4 +1,9 @@
-import pandas as pd
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
 
-simpsons = pd.read_html("https://en.wikipedia.org/wiki/List_of_The_Simpsons_episodes_(seasons_1%E2%80%9320)")
-print(len(simpsons))
+website = "https://www.thesun.co.uk/sport/football/"
+path = "/Users/georgehanna/Downloads/chromedriver-mac-x64/chromedriver"
+
+service = Service(executable_path = path)
+driver = webdriver.Chrome(service = service)
+driver.get(website)
